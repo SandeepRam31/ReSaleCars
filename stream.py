@@ -49,7 +49,7 @@ for i in model_cars:
 model_h = st.selectbox('Which model do you own? ', 
                           model_car_s)
                           
-mileage = st.text_input('Miles Driven: ', '20000')
+mileage = st.select_slider('Miles Driven: ', np.arange(500, 100000, 500))
 mileage = float(mileage)**(1/3)
 
 cols = tuple(color_transforms.keys())
@@ -72,7 +72,9 @@ encode_color = color_transforms[color]
 
 encode_company = [int(i) for i in encode_company]
 encode_color = [int(i) for i in encode_color]
+
 X = [model_owned, age, mileage]
+
 X += encode_company
 X += encode_color
 
@@ -104,5 +106,7 @@ try:
   img = Image.open(BytesIO(response.content))
   with st.spinner('Getting image...'):
     st.image(img, caption = string, width = 360)
+    
+    
 except:
   pass
