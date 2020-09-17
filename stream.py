@@ -124,7 +124,7 @@ miles = np.arange(500, 100000, 500)
 for mile in miles:
   X_main.append(X2 + [mile] + XC2)
  
-X_main_ = pd.DataFrame(np.reshape(np.array(X_main), (None, 31)), columns = cols)
+X_main_ = pd.DataFrame(np.reshape(np.array(X_main), (-1, 31)), columns = cols)
 main_graph = model.predict(X_main_)
 
 plt.plot(miles, main_graph)
