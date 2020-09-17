@@ -125,11 +125,12 @@ for mile in miles:
   X_main.append(X2 + [mile] + XC2)
  
 X_main_ = pd.DataFrame(np.reshape(np.array(X_main), (-1, 31)), columns = cols)
-main_graph = model.predict(X_main_)
+main_graph = np.exp(model.predict(X_main_))
 
+st.write(X_main_)
 st.write(main_graph)
 
-plt.plot(miles, np.exp(main_graph))
+plt.plot(miles, main_graph)
 plt.xlabel('Miles')
 plt.ylabel('Price')
 plt.title('Miles driven vs Price')
