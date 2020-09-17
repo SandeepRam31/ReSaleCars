@@ -3,3 +3,4 @@ sklearn
 numpy
 pillow
 xgboost
+matplotlib
