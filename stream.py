@@ -128,6 +128,9 @@ X_main_ = pd.DataFrame(np.reshape(np.array(X_main), (-1, 31)), columns = cols)
 main_graph = model.predict(X_main_)
 
 plt.plot(miles, np.exp(main_graph))
+plt.xlabels('Miles')
+plt.ylabels('Price')
+plt.title('Miles driven vs Price')
 st.pyplot()
 
 X3_model = [model_owned]
@@ -143,9 +146,12 @@ years_ = np.arange(2000, 2020, 1)
 for year_ in years_:
   X2_main.append(X3_model + year_ +X3_miles + XC3)
  
-X2_main_ = pd.DataFrame(np.reshape(np.array(X_main), (-1, 31)), columns = cols)
-main_graph_2 = np.exp(model.predict(X_main_))
+X2_main_ = pd.DataFrame(np.reshape(np.array(X2_main), (-1, 31)), columns = cols)
+main_graph_2 = np.exp(model.predict(X2_main_))
 
 plt.plot(years_ , main_graph_2)
+plt.xlabel('Years')
+plt.ylabel('Price')
+plt.title('Age or cars Vs Price')
 st.pyplot()
 
