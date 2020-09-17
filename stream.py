@@ -127,6 +127,25 @@ for mile in miles:
 X_main_ = pd.DataFrame(np.reshape(np.array(X_main), (-1, 31)), columns = cols)
 main_graph = model.predict(X_main_)
 
-plt.plot(miles, main_graph)
+plt.plot(miles, np.exp(main_graph))
+st.pyplot()
+
+X3_model = [model_owned]
+X3_miles = [mileage]
+XC3 = []
+XC3 += encode_company
+XC3 += encode_color
+
+X2_main = []
+
+years_ = np.arange(2000, 2020, 1)
+
+for year_ in years_:
+  X2_main.append(X3_model + year_ +X3_miles + XC3)
+ 
+X2_main_ = pd.DataFrame(np.reshape(np.array(X_main), (-1, 31)), columns = cols)
+main_graph_2 = np.exp(model.predict(X_main_))
+
+plt.plot(years_ , main_graph_2)
 st.pyplot()
 
