@@ -16,7 +16,7 @@ def load_model():
   with open('./PklFiles/model_2.pkl', 'rb') as f:
     model = pkl.load(f)
 
-  with open(' /PklFiles/companies.pkl', 'rb') as f:
+  with open('./PklFiles/companies.pkl', 'rb') as f:
     companies = pkl.load(f)
 
   with open('./PklFiles/color_transform.pkl', 'rb') as f:
