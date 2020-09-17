@@ -13,7 +13,7 @@ st.header("Fill the details given below: ")
 
 @st.cache(allow_output_mutation=True)
 def load_model():
-  with open('./PklFiles/predictor.pkl', 'rb') as f:
+  with open('./PklFiles/model_2.pkl', 'rb') as f:
     model = pkl.load(f)
 
   with open(' /PklFiles/companies.pkl', 'rb') as f:
