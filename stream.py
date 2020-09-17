@@ -127,6 +127,7 @@ for mile in miles:
 X_main_ = pd.DataFrame(np.reshape(np.array(X_main), (-1, 31)), columns = cols)
 main_graph = model.predict(X_main_)
 
+st.write(main_graph)
 
 plt.plot(miles, np.exp(main_graph))
 plt.xlabel('Miles')
