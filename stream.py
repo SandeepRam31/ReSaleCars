@@ -106,7 +106,7 @@ try:
   img = Image.open(BytesIO(response.content))
   with st.spinner('Getting image...'):
     st.image(img, caption = string, width = 360)
-    
-    
+   
 except:
-  pass
+  with st.spinner('Fining image...'):
+    pass
