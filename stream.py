@@ -13,22 +13,22 @@ st.header("Fill the details given below: ")
 
 @st.cache(allow_output_mutation=True)
 def load_model():
-  with open('/PklFiles/predictor.pkl', 'rb') as f:
+  with open('./PklFiles/predictor.pkl', 'rb') as f:
     model = pkl.load(f)
 
-  with open('/PklFiles/companies.pkl', 'rb') as f:
+  with open(' /PklFiles/companies.pkl', 'rb') as f:
     companies = pkl.load(f)
 
-  with open('/PklFiles/color_transform.pkl', 'rb') as f:
+  with open('./PklFiles/color_transform.pkl', 'rb') as f:
     color_transforms = pkl.load(f)
 
-  with open('/PklFiles/model_transform.pkl', 'rb') as f:
+  with open('./PklFiles/model_transform.pkl', 'rb') as f:
     model_transform = pkl.load(f)
 
-  with open('/PklFiles/model_names.pkl', 'rb') as f:
+  with open('./PklFiles/model_names.pkl', 'rb') as f:
     model_names = pkl.load(f)
 
-  with open('/PklFiles/img_dict.pkl', 'rb') as f:
+  with open('./PklFiles/img_dict.pkl', 'rb') as f:
     image_list = pkl.load(f)
 
   return model, companies, color_transforms, model_transform, model_names, image_list
