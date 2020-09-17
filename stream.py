@@ -106,7 +106,7 @@ try:
   response = requests.get(url)
   img = Image.open(BytesIO(response.content))
   with st.spinner('Getting image...'):
-    st.image(img, caption = string, width = 360)
+    st.image(img, caption = string, width = 320)
    
 except:
   with st.spinner('Fining image...'):
