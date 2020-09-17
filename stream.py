@@ -128,5 +128,5 @@ X_main_ = pd.DataFrame(np.reshape(np.array(X_main), (-1, 31)), columns = cols)
 main_graph = model.predict(X_main_)
 
 plt.plot(miles, main_graph)
-st.pyploy()
+st.pyplot()
 
