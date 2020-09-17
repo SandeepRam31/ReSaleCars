@@ -2,3 +2,4 @@ streamlit
 sklearn
 numpy
 pillow
+xgboost
