@@ -128,8 +128,8 @@ X_main_ = pd.DataFrame(np.reshape(np.array(X_main), (-1, 31)), columns = cols)
 main_graph = model.predict(X_main_)
 
 plt.plot(miles, np.exp(main_graph))
-plt.xlabels('Miles')
-plt.ylabels('Price')
+plt.xlabel('Miles')
+plt.ylabel('Price')
 plt.title('Miles driven vs Price')
 st.pyplot()
 
