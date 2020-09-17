@@ -6,6 +6,7 @@ import requests
 from PIL import Image
 from io import BytesIO
 import pickle as pkl
+import matplotlib.pyplot as plt
 
 
 st.title('Resale Price Detector')
@@ -110,3 +111,22 @@ try:
 except:
   with st.spinner('Fining image...'):
     pass
+
+X2 = [model_owned, age]
+XC2 = []
+XC2 += encode_company
+XC2 += encode_color
+
+X_main = []
+
+miles = np.arange(500, 100000, 500)
+
+for mile in miles:
+  X_main.append(X2 + [mile] + XC2)
+ 
+X_main_ = pd.DataFrame(np.array([X_main]), columns = cols)
+main_graph = model.predict(X_main_)
+
+plt.plot(miles, main_graph)
+st.pyploy()
+
