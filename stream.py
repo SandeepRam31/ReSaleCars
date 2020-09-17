@@ -125,12 +125,16 @@ for mile in miles:
   X_main.append(X2 + [mile] + XC2)
  
 X_main_ = pd.DataFrame(np.reshape(np.array(X_main), (-1, 31)), columns = cols)
-main_graph = np.exp(model.predict(X_main_))
+main_graph = []
+
+with st.spinner('Calculating....'):
+  for i in range(len(X_main_)):
+    main_graph.append(np.exp(model.predict(X_main_[i:i+1])))
 
 st.write(X_main_)
 st.write(main_graph)
 
-plt.plot(miles, main_graph)
+plt.plot(miles, np.array(main_graph))
 plt.xlabel('Miles')
 plt.ylabel('Price')
 plt.title('Miles driven vs Price')
@@ -150,7 +154,11 @@ for year_ in years_:
   X2_main.append(X3_model + [year_] +X3_miles + XC3)
  
 X2_main_ = pd.DataFrame(np.reshape(np.array(X2_main), (-1, 31)), columns = cols)
-main_graph_2 = np.exp(model.predict(X2_main_))
+main_graph_2 = []
+
+with st.spinner('Calculating....'):
+  for i in range(len(X2_main_)):
+    main_graph_2.append(np.exp(model.predict(X2_main_[i:i+1])))
 
 plt.plot(years_ , main_graph_2)
 plt.xlabel('Years')
