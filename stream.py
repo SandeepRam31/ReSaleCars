@@ -49,7 +49,7 @@ for i in model_cars:
 model_h = st.selectbox('Which model do you own? ', 
                           model_car_s)
                           
-mileage = st.select_slider('Miles Driven: ', np.arange(500, 100000, 500))
+mileage = st.select_slider('Miles Driven: ',500, 100000, 500)
 mileage = float(mileage)**(1/3)
 
 cols = tuple(color_transforms.keys())
