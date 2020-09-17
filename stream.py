@@ -56,7 +56,7 @@ mileage = float(mileage)**(1/3)
 cols = tuple(color_transforms.keys())
 color = st.selectbox('Color: ', cols)
 
-year = st.text_input('Year Of Purchase ', '2020')
+year = st.number_input('Year of Purchase', min_value=1990, max_value=2020, value= 2017, step=1)
 age = 2020 - int(year)
 
 model_owned = model_h.split(' ')
