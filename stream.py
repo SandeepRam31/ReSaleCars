@@ -91,16 +91,18 @@ st.markdown('**Price of your car is **' )
 st.write('$ ', np.floor(np.exp(label)))
 
 st.write('')
-st.markdown('**Do you want see a picture of the car? **' ) 
 
-model_x = model_h.split(' ')[1:]
-string = ''
-for part in model_x:
-  string += part
+try:
+  model_x = model_h.split(' ')[1:]
+  string = ''
+  for part in model_x:
+    string += part
 
-inde = model_names.index(string)
-url = image_list['image'][inde]
-response = requests.get(url)
-img = Image.open(BytesIO(response.content))
-with st.spinner('Getting image...'):
-  st.image(img, caption = string, width = 420)
+  inde = model_names.index(string)
+  url = image_list['image'][inde]
+  response = requests.get(url)
+  img = Image.open(BytesIO(response.content))
+  with st.spinner('Getting image...'):
+    st.image(img, caption = string, width = 360)
+except:
+  pass
