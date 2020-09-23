@@ -10,7 +10,7 @@ The data cleaning and feature engineering has been done using pandas and numpy. 
 <br>
 
 # Contributions:
-(Sandeep Ram)[https://github.com/SandeepRam31]
+[Sandeep Ram](https://github.com/SandeepRam31)
 <br>
 
 # IMPLEMENTATION:
